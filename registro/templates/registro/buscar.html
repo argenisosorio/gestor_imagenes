@@ -1,0 +1,65 @@
+{% extends "registro/base.html" %}
+{% block titulo %}Gestor de imágenes{% endblock %}
+{% block cuerpo %}
+<script type="text/javascript">
+  document.oncontextmenu = function(){return false;}
+</script>
+<div align="center">
+  <form action="{% url 'registro:busqueda' %}" method="get">
+    <h4>
+      Escriba la etiqueta y efectúe la búsqueda de imágenes.
+    </h4>
+    <br />
+    <input type="text" name="q" placeholder="" required>
+    <br />
+    <br />
+    <input type="submit" class="btn btn-success" value="Buscar">
+  </form>
+  <br />
+  {% if imagenes %}
+  <p>Estas buscado imágenes que coincidan con la etiqueta: <strong>{{ query }}</strong></p>
+    <span class="imagenes_encontradas"><b>imagenes encontradas: {{ imagenes|length }}.</b></span>
+    <br />
+    <br />
+    <table class="table table-striped" border="1px">
+      <thead>
+        <tr>
+          <th><b>Título</b></th>
+          <th><b>Autor</b></th>
+          <th><b>Etiquetas</b></th>
+          <th><b>Imagen</b></th>
+          <th><b>Ubicación electróica</b></th>
+        </tr>
+      </thead>
+      {% for x in imagenes %}
+      <tbody>
+        <tr>
+          <td>
+            {{ x.titulo }}
+          </td>
+          <td>
+            {{ x.autor }}
+          </td>
+          <td>
+            {{ x.tag }}
+          </td>
+          <td>
+            <img src="media/{{ x.imagen }}" class="img-thumbnail" width="400px">
+          </td>
+          <td>
+            <a href="media/{{ x.imagen }}" class="link_descarga" target="_blank" download>
+              Descargar
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    <br />
+    <br />
+  {% else %}
+    <!--p>Ninguna imagen coincide con el criterio de búsqueda.</p-->
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "registro/base.html" %}
+{% block titulo %}Subir imágen{% endblock %}
+{% block cuerpo %}
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+  <label>{{ form.titulo.label }}:</label>
+  {{ form.titulo }}
+  {% if form.titulo.errors %}
+    <p>{{ form.titulo.errors}}</p>
+  {% endif %}
+
+  <hr />
+
+  <label>{{ form.imagen.label }}:</label>
+  {{ form.imagen }}
+  {% if form.imagen.errors %}
+    <p>{{ form.imagen.errors}}</p>
+  {% endif %}
+
+  <hr />
+
+  <label>{{ form.autor.label }}:</label>
+  {{ form.autor }}
+  {% if form.autor.errors %}
+    <p>{{ form.autor.errors}}</p>
+  {% endif %}
+
+  <hr />
+
+  <label>Etiqueta/s:</label>
+  {{ form.tag }}
+  {% if form.tag.errors %}
+    <p>{{ form.tag.errors}}</p>
+  {% endif %}
+
+  <hr />
+
+  <button class="btn btn-primary" type="reset">Limpiar campos</button>
+  <button class="btn btn-success" type="submit">Subir imágen</button>
+</form>
+{% endblock %}

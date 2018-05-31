@@ -1,0 +1,11 @@
+*.*.backup
+*.*~
+*.tar.gz
+*.pyc
+*.log
+*.swp
+db.sqlite3
+gestor_imagenes/settings.py
+registro/migrations
+media/
+static_files/

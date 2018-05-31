@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% load staticfiles %}
+    <link rel="icon" href="{% static 'img/cenditel-logo.png' %}">
+    <title>
+      {% block titulo %}Gestor de imágenes{% endblock %}
+    </title>
+    {% load staticfiles %}
+    <!-- Bootstrap Styles - css
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+    <!-- Styles - css
+    ================================================== -->
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet">
+    <!-- Others - js
+    ================================================== -->
+    <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+    <script src="{% static 'js/holder.min.js' %}"></script>
+    <!-- Jquery - js
+    ================================================== -->
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <!-- Bootstrap - js
+    ================================================== -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Bug fix - js
+    ================================================== -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+  </head>
+  <body>
+
+    <!-- navbar cintillo
+    ================================================== -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-cintillo">
+    <div class="container">
+      <div align="center">
+        <img class="cintillo_up" src="{% static 'img/cintillo_2018.png' %}" width="100%"></img>
+      </div>
+    </div>
+    </nav>
+    <!-- navbar cintillo end -->
+
+    <br />
+    <br />
+    <br />
+    <br />
+ 
+    <div class="container theme-showcase" role="main">
+
+      <img class="img-responsive" src="{% static 'img/cintillo_cenditel.png' %}" width="100%"></img>
+
+      <br />
+
+      <div class="well">
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-success alert-dismissable">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <strong>
+                  {% if message.tags %}{% endif %}
+                  {{ message }}
+                </strong>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <div class="">
+
+          <!-- Navbar
+          ================================================== -->
+          <nav class="navbar navbar-default navbar-default-menu">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'registro:buscar' %}">
+                  <i class="glyphicon glyphicon-home"></i>
+                  Inicio
+                </a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                {% if request.user.is_authenticated %}
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="{% url 'registro:guardar_imagen' %}">
+                      <i class="glyphicon glyphicon-upload"></i>
+                      Subir imagen
+                    </a>
+                  </li>
+                </ul>
+                <!--ul class="nav navbar-nav">
+                  <li>
+                    <a href="{% url 'registro:lista_imagenes' %}">
+                      <i class="glyphicon glyphicon-list"></i>
+                      Lista de imagenes
+                    </a>
+                  </li>
+                </ul-->
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="{% url 'registro:salir' %}">
+                      <i class="glyphicon glyphicon-log-out"></i>
+                      Cerrar sesión
+                    </a>
+                  </li>
+                </ul>
+                {% else %}
+                {% endif %}
+              </div>
+            </div>
+          </nav><!-- End navbar -->
+          <br />
+          {% block cuerpo %}
+          {% endblock %}
+
+        </div>
+
+        <br />
+        <br />
+
+      </div>
+
+      <div class="well well-footer">
+        <div align="center">
+          <b>
+            <a href="http://www.cenditel.gob.ve" target="_blank">
+              Desarrollado en el Centro Nacional de Desarrollo e Investigacion en Tecnologias Libres - CENDITEL
+            </a>
+            <br />
+            <br />
+            <a href="http://conocimientolibre.cenditel.gob.ve/licencias/" target="_blank">
+              <img src="{% static 'img/lc-lc.png' %}" width="100px"></img>
+            </a>
+            <a href="http://conocimientolibre.cenditel.gob.ve/licencia-de-software-v-1-3/" target="_blank">
+              <img src="{% static 'img/lc-ls-icon.png' %}" width="100px"></img>
+            </a>
+          </b>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+
+  <script src="{% static 'js/scripts.js' %}"></script>
+</html>

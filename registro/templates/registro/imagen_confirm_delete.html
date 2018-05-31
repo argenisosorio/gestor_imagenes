@@ -1,0 +1,10 @@
+{% extends "registro/base.html" %}
+{% block titulo %}Gestor de imágenes{% endblock %}
+{% block cuerpo %}
+<form method="post">{% csrf_token %}
+  Está seguro que desea eliminar la imagen: "{{ object }}" ?
+  <br />
+  <br />
+  <input type="submit" class="btn btn-danger" value="Borrar" />
+</form>
+{% endblock %}

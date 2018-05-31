@@ -1,0 +1,22 @@
+{% extends "registro/base.html" %}
+{% block titulo %}Gestor de imágenes{% endblock %}
+{% block cuerpo %}
+<div align="center">
+  <h1>Gestor de imágenes</h1>
+  <br />
+  <h3>Iniciar sesión</h3>
+  <form action="{% url 'registro:login' %}" method="post">{% csrf_token %}
+    <br />
+    <b>Usuario</b><br />
+    {{ form.username }}
+    <br />
+    <br />
+    <b>Contraseña</b>
+    <br />
+    {{ form.password }}
+    <br />
+    <br />
+    <button class="btn btn-success" type="submit">Iniciar sesión</button>
+  </form>
+</div>
+{% endblock %}
