@@ -44,7 +44,7 @@ $ python manage.py migrate
 $ python manage.py createsuperuser
 
 $ python manage.py runserver
-
+```
 ## Capturas
 
 ![captura-1.png](captura-1.png "captura-1.png")
