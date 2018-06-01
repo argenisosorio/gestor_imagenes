@@ -107,6 +107,10 @@ a {
   width: 100%;
 }
 
+#id_autor {
+  width: 100%;
+}
+
 .errorlist {
   color: red;
 }

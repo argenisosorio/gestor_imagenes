@@ -29,6 +29,7 @@
 
   <label>Etiqueta/s:</label>
   {{ form.tag }}
+  <p>Las etiquetas deben ir separadas por espacios</p>
   {% if form.tag.errors %}
     <p>{{ form.tag.errors}}</p>
   {% endif %}
