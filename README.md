@@ -15,6 +15,10 @@ Django==1.8.8
 Python==2.7
 ```
 
+Usaremos $ para describir los comandos que se usaran con usuario regular.
+
+Usaremos # para describir los comandos que se usaran con superusuario. 
+
 ## Instalación de paquetes para crear entornos virtuales
 ```
 # apt-get install install python-setuptools python-dev
