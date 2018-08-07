@@ -31,24 +31,26 @@ $ virtualenv mi_env
 
 $ source mi_env/bin/activate
 ```
+
 ## Instalación de requerimientos del proyecto
 ```
 $ pip install -r gestor_imagenes/requirements.txt 
 ```
+
 ## Probar el proyecto
 ```
 $ cd gestor_imagenes
 
 $ cp gestor_imagenes/settings.py_example gestor_imagenes/settings.py
+```
 
-$ python manage.py makemigrations registro
-
-$ python manage.py migrate
-
-$ python manage.py createsuperuser
+## Ejecutar las migraciones y correr el servidor de desarrollo
+```
+$ bash reset_db.sh
 
 $ python manage.py runserver
 ```
+
 ## Capturas
 
 ![captura-1.png](captura-1.png "captura-1.png")
