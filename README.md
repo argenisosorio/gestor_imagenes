@@ -1,6 +1,6 @@
 # Gestor de imágenes que permite subir recuros digitales a un servidor y luego listarlos para descargarlos.
 
-Creado por dM
+Desarrollado por: Ing. Argenis Osorio en la Fundación CENDITEL.
 
 ## Paquetes requeridos
 
