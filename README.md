@@ -21,7 +21,7 @@ Usaremos # para describir los comandos que se usaran con superusuario.
 
 ## Instalación de paquetes para crear entornos virtuales
 ```
-# apt-get install install python-setuptools python-dev
+# apt-get install install python-setuptools python-dev python-pip
 
 # apt-get install python-virtualenv virtualenvwrapper
 ```
